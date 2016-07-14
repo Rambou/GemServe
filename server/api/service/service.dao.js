@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @description MongoDB driver module
  * @param mongoose
@@ -23,6 +25,13 @@ import serviceSchema from './service.model';
 import _ from 'lodash';
 
 /**
+ * @description Service Model
+ * @param Service
+ * @const
+ */
+const Service = mongoose.model('Service', serviceSchema);
+
+/**
  * @function list
  * @description Function that returns all services from MongoDB
  * @static
@@ -34,7 +43,11 @@ serviceSchema.statics.list = () => {
 
     Service.find(_query)
       .exec((err, services) => {
-        err ? reject(err) : resolve(services);
+        if (err) {
+          reject(err);
+        } else {
+          resolve(services);
+        }
       });
   });
 };
@@ -54,7 +67,11 @@ serviceSchema.statics.show = id => {
 
     Service.findById(id)
       .exec((err, service) => {
-        err ? reject(err) : resolve(service);
+        if (err) {
+          reject(err);
+        } else {
+          resolve(service);
+        }
       });
   });
 };
@@ -75,7 +92,11 @@ serviceSchema.statics.create = service => {
     const _service = new Service(service);
 
     _service.save((err, saved) => {
-      err ? reject(err) : resolve(saved);
+      if (err) {
+        reject(err);
+      } else {
+        resolve(saved);
+      }
     });
   });
 };
@@ -100,7 +121,11 @@ serviceSchema.statics.update = (id, service) => {
 
     Service.findByIdAndUpdate(id, service)
       .exec((err, updated) => {
-        err ? reject(err) : resolve(updated);
+        if (err) {
+          reject(err);
+        } else {
+          resolve(updated);
+        }
       });
   });
 };
@@ -120,17 +145,14 @@ serviceSchema.statics.delete = id => {
 
     Service.findByIdAndRemove(id)
       .exec((err, deleted) => {
-        err ? reject(err) : resolve(deleted);
+        if (err) {
+          reject(err);
+        } else {
+          resolve(deleted);
+        }
       });
   });
 };
-
-/**
- * @description Service Model
- * @param Service
- * @const
- */
-const Service = mongoose.model('Service', serviceSchema);
 
 /**
  * @exports Service
