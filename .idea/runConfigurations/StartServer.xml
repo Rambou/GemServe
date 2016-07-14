@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="StartServer" type="js.build_tools.npm" factoryName="npm">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run-script" />
+    <scripts>
+      <script value="dev" />
+    </scripts>
+    <arguments value="GemServe" />
+    <node-interpreter value="project" />
+    <envs>
+      <env name="NODE_ENV" value="GemServe" />
+      <env name="MONGODB_URI" value="195.251.166.51:27017" />
+    </envs>
+    <method />
+  </configuration>
+</component>
