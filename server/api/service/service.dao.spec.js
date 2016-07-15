@@ -1,3 +1,4 @@
+'use strict';
 import mongoose from 'mongoose';
 import { expect } from 'chai';
 
@@ -45,7 +46,7 @@ describe('Service Data Access Object: ', () => {
 
   describe('create', () => {
     it('should throw an error, object passed is not defined', done => {
-      let _undefinedService = undefined;
+      let _undefinedService;
       let _onSuccess = () => {
         expect(true).to.be.false; // should not come here;
       };

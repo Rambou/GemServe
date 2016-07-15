@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @description HTTP server module
  * @param http

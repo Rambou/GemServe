@@ -5,7 +5,6 @@
     <scripts>
       <script value="dev" />
     </scripts>
-    <arguments value="GemServe" />
     <node-interpreter value="project" />
     <envs>
       <env name="NODE_ENV" value="GemServe" />

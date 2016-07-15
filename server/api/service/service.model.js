@@ -26,4 +26,4 @@ const _serviceSchema = {
  * @exports serviceSchema
  * @default
  */
-export default Schema(_serviceSchema);
+export default new Schema(_serviceSchema);
